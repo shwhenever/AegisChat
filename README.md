@@ -1,4 +1,4 @@
-
+![AegisChat Icon](https://raw.githubusercontent.com/shwhenever/AegisChat/refs/heads/main/icon.png)
 
 # Aegis — 安全为先的 AI 客户端
 # 一站式AI工作站
