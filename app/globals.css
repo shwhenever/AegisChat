@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Aegis design tokens — "tactical cyber-refined" aesthetic
+   Dark-first, emerald accent (secure/verified), amber (safety)
+   ============================================================ */
+
+:root,
+[data-theme="dark"] {
+  --bg: #07090d;
+  --bg-elev: #0c0f16;
+  --surface: #11151f;
+  --surface-2: #171c28;
+  --surface-3: #1e2433;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.13);
+  --text: #e8ecf3;
+  --text-muted: #8b94a8;
+  --text-faint: #586074;
+  --accent: #34d399;
+  --accent-2: #22d3ee;
+  --accent-fg: #04130d;
+  --accent-soft: rgba(52, 211, 153, 0.13);
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, 0.14);
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.13);
+  --info: #60a5fa;
+  --shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.7);
+  --grid-line: rgba(255, 255, 255, 0.025);
+}
+
+[data-theme="light"] {
+  --bg: #f4f6f9;
+  --bg-elev: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f1f3f7;
+  --surface-3: #e7eaf1;
+  --border: rgba(12, 15, 25, 0.08);
+  --border-strong: rgba(12, 15, 25, 0.15);
+  --text: #131722;
+  --text-muted: #5a6373;
+  --text-faint: #8a93a4;
+  --accent: #059669;
+  --accent-2: #0891b2;
+  --accent-fg: #ffffff;
+  --accent-soft: rgba(5, 150, 105, 0.1);
+  --warn: #d97706;
+  --warn-soft: rgba(217, 119, 6, 0.12);
+  --danger: #dc2626;
+  --danger-soft: rgba(220, 38, 38, 0.1);
+  --info: #2563eb;
+  --shadow: 0 18px 45px -22px rgba(20, 30, 60, 0.25);
+  --grid-line: rgba(12, 15, 25, 0.035);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-display: var(--font-sora), var(--font-geist-sans), sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ambient tactical grid + glow backdrop */
+.app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 500px at 12% -8%, var(--accent-soft), transparent 60%),
+    radial-gradient(700px 480px at 100% 0%, rgba(34, 211, 238, 0.08), transparent 55%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 44px 44px,
+    var(--bg);
+}
+[data-theme="light"] .app-backdrop {
+  background:
+    radial-gradient(900px 500px at 12% -8%, var(--accent-soft), transparent 60%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 44px 44px,
+    var(--bg);
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+  background-clip: content-box;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* Glass surface utility */
+.glass {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.shield-ring {
+  box-shadow: 0 0 0 1px var(--border), 0 0 24px -6px var(--accent-soft);
+}
+
+/* Accent gradient text */
+.text-grad {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+@keyframes aegis-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.92); }
+}
+.aegis-dot {
+  animation: aegis-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes aegis-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.aegis-rise {
+  animation: aegis-rise 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes aegis-stream {
+  0% { background-position: 0 0; }
+  100% { background-position: 24px 0; }
+}
+.stream-bar {
+  background-image: linear-gradient(90deg, var(--accent) 0 30%, transparent 30% 70%, var(--accent) 70% 100%);
+  background-size: 24px 100%;
+  animation: aegis-stream 0.7s linear infinite;
+}
+
+@keyframes aegis-spin {
+  to { transform: rotate(360deg); }
+}
+.aegis-spin {
+  animation: aegis-spin 0.9s linear infinite;
+}
+
+/* Markdown / prose */
+.prose-aegis {
+  font-size: 0.95rem;
+  line-height: 1.72;
+  word-break: break-word;
+}
+.prose-aegis > * + * { margin-top: 0.85rem; }
+.prose-aegis h1, .prose-aegis h2, .prose-aegis h3 {
+  font-family: var(--font-display);
+  font-weight: 650;
+  line-height: 1.3;
+  margin-top: 1.4rem;
+}
+.prose-aegis h1 { font-size: 1.45rem; }
+.prose-aegis h2 { font-size: 1.22rem; }
+.prose-aegis h3 { font-size: 1.06rem; }
+.prose-aegis p { margin: 0; }
+.prose-aegis a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose-aegis ul, .prose-aegis ol { padding-left: 1.35rem; }
+.prose-aegis ul { list-style: disc; }
+.prose-aegis ol { list-style: decimal; }
+.prose-aegis li { margin: 0.25rem 0; }
+.prose-aegis blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.prose-aegis code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-3);
+  padding: 0.12em 0.4em;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+.prose-aegis pre {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.95rem 1rem;
+  overflow-x: auto;
+  font-size: 0.84rem;
+}
+.prose-aegis pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+.prose-aegis table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.prose-aegis th, .prose-aegis td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+.prose-aegis th { background: var(--surface-2); font-weight: 600; }
+.prose-aegis hr { border-color: var(--border); }
+
+/* highlight.js theme (atom-one-dark-ish, themed) */
+.hljs { color: var(--text); background: transparent; }
+.hljs-comment, .hljs-quote { color: var(--text-faint); font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-section, .hljs-link { color: #c678dd; }
+.hljs-string, .hljs-attr, .hljs-template-tag, .hljs-addition { color: var(--accent); }
+.hljs-number, .hljs-meta, .hljs-built_in, .hljs-type, .hljs-literal { color: var(--accent-2); }
+.hljs-title, .hljs-name, .hljs-selector-id, .hljs-selector-class { color: #61afef; }
+.hljs-function .hljs-title, .hljs-title.function_ { color: #e5c07b; }
+.hljs-variable, .hljs-attribute, .hljs-tag { color: #e06c75; }
+.hljs-deletion { color: var(--danger); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 700; }
+
+textarea, input { font-family: inherit; }
+button { cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

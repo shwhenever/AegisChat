@@ -1,0 +1,18 @@
+{
+  "name": "Aegis — 安全为先的 AI 客户端",
+  "short_name": "Aegis",
+  "description": "零知识加密、多模型路由、Spectrum 对比与安全护盾的 AI 客户端",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
