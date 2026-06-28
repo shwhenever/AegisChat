@@ -5,7 +5,6 @@
 
 [<img src="https://vercel.com/button"  height="30">](https://vercel.com/new/clone?repository-url=https://github.com/shwhenever/AegisChat&project-name=AegisChat&repository-name=AegisChat)  [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/github.com/shwhenever/AegisChat)
 
-[中文版本](https://github.com/shwhenever/AegisChat/blob/main/README_CN.md)
 
 
 > 零知识加密密钥保险库 · 多模型路由 · Spectrum 多模型对比 · 安全护盾 · 可部署于 Vercel
