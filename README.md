@@ -3,7 +3,7 @@
 # Aegis — 安全为先的 AI 客户端
 # 一站式AI工作站
 
-[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https://github.com/shwhenever/AegisChat&project-name=AegisChat&repository-name=AegisChat) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/github.com/shwhenever/AegisChat)
+[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https://github.com/shwhenever/AegisChat&project-name=AegisChat&repository-name=AegisChat) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/github.com/shwhenever/AegisChat) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/github.com/shwhenever/AegisChat)
 
 
 > 零知识加密密钥保险库 · 多模型路由 · Spectrum 多模型对比 · 安全护盾 · 可部署于 Vercel
